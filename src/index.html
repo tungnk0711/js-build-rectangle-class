@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var Rectangle = function (width, height) {
+
+            this.width = width;
+            this.height = height;
+
+            this.getWidth = function () {
+                return this.width;
+            }
+
+            this.getHeight = function () {
+                return this.height;
+            }
+
+            this.setWidth = function (width) {
+                this.width = width;
+            }
+
+            this.setHeight = function (height) {
+                this.height = height;
+            }
+
+            this.perimeter = function () {
+                return (this.width + this.height) * 2;
+            }
+
+            this.area = function () {
+                return this.width * this.height;
+            }
+        }
+
+        var rec = new Rectangle(100, 80);
+        var peri = rec.perimeter();
+        var area = rec.area();
+
+        console.log("Perimeter: " + peri + ", Area: " + area);
+
+
+    </script>
+</head>
+<body>
+<canvas id="myCanvas" width="200px" height="100px" style="border: 1px solid #333">
+
+</canvas>
+
+<script type="text/javascript">
+    var canvas = document.getElementById('myCanvas');
+    ctx = canvas.getContext('2d');
+    ctx.fillStyle = "#FF0000";
+
+    var w = rec.getWidth();
+    var h = rec.getHeight();
+
+    ctx.fillRect(0, 0, w, h);
+
+</script>
+</body>
+</html>
